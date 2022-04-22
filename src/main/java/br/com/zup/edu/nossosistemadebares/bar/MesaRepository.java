@@ -7,9 +7,4 @@ import javax.persistence.LockModeType;
 import java.util.Optional;
 
 public interface MesaRepository extends JpaRepository<Mesa,Long> {
-
-    @Override
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
-    Optional<Mesa> findById(Long id);
-
 }

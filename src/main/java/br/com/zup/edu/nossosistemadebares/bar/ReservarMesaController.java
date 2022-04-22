@@ -2,10 +2,7 @@ package br.com.zup.edu.nossosistemadebares.bar;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.transaction.Transactional;
@@ -20,7 +17,7 @@ public class ReservarMesaController {
         this.repository = repository;
     }
 
-    @PutMapping("/mesas/{id}")
+    @PatchMapping("/mesas/{id}")
     @Transactional
     public ResponseEntity<?> reservar(@PathVariable Long id, @RequestBody @Valid ReservaMesaRequest request) {
         Mesa mesa = repository.findById(id)

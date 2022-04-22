@@ -31,6 +31,9 @@ public class Mesa {
     @Column(nullable = false)
     private Integer capacidade;
 
+    @Version
+    private int versao;
+
     public Mesa(Integer capacidade){
         this.capacidade=capacidade;
     }
